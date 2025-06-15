@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Serif:ital@0;1&family=Poppins&display=swap');
+
+span{
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "Noto Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+body {
+    background-color: #f8f4f1;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#111111 ;
+    margin: 0;
+}
+
+a{
+    color: #111111;
+}
+
+a:hover{
+    color: #fd3887;
+}
+
+::selection {
+    background: #fd3887;
+    color: #f8f4f1;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+* {
+    transition: all 200ms ease;
+}
+
+main{
+    min-height: 95vh;
+    padding: 0rem 5rem;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+p{
+    max-width: 40rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    main {
+        animation: fadeIn 0.6s ease;
+    }
+}
+
+*::-webkit-scrollbar {
+height: 10px;
+width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+background-color: #f8f4f1;
+}
+
+*::-webkit-scrollbar-thumb {
+border-radius: 2rem;
+background-color: #111111;
+border: 0.3rem solid #f8f4f1;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+background-color: #fd3887;
+}
+
+*::-webkit-scrollbar-thumb:active {
+background-color: #fd3887;
+}
+
+/* HEADER----------------------------------------------------- */
+header nav{
+    padding: 2rem 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+header img{
+    width: 10rem;
+}
+
+header a{
+    text-decoration: none;
+}
+
+header .currentPage{
+    color: #fd3887;
+}
+
+/* FOOTER----------------------------------------------------- */
+
+footer{
+    background-color: #f1e1f4;
+    padding: 2rem 5rem;
+    border-top: .3rem solid #fd3887;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* HOME ------------------------------------------------------ */
+
+#home1{
+    background-color: #f1e1f4;
+    padding: 2rem 5rem;
+}
+
+#home1 h1{
+    line-height: 1;
+}
+
+#home1 span{
+    font-size: 2.5rem;
+}
