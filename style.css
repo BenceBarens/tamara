@@ -14,6 +14,14 @@ h1, h2, h3, h4, h5, h6{
 
 h1{
     font-size: 4rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    h1{
+        line-height: 0.5;
+    }
+    
 }
 
 body {
@@ -24,6 +32,11 @@ body {
     font-style: normal;
     color:#111111 ;
     margin: 0;
+}
+
+P{
+    text-align: center;
+    margin: auto;
 }
 
 a{
@@ -48,8 +61,23 @@ a:hover{
 }
 
 main{
-    min-height: 95vh;
     padding: 0rem 5rem;
+}
+
+@media only screen and (min-width: 768px) {
+    main {
+        min-height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    main {
+        padding: 2rem 2rem 0rem 2rem;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
 }
 
 ul{
@@ -105,7 +133,6 @@ background-color: #fd3887;
 
 /* HEADER----------------------------------------------------- */
 header nav{
-    padding: 2rem 5rem;
     display: flex;
     justify-content: space-between;
 }
@@ -128,6 +155,138 @@ header .currentPage{
     color: #fd3887;
 }
 
+.desktop-header{
+    padding: 2rem 5rem;
+}
+
+.mobile-header {
+    display: none;
+    background-color: #f1e1f4;
+    box-shadow: rgba(0,0,0,0.2) 0 0 1rem;
+    border-radius: 3rem;
+    position: fixed;
+    bottom: 2rem;
+    padding: 1rem 1.5rem;
+    justify-content: center;
+    transition: all 0.2s ease;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.mobile-header img{
+    width: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .desktop-header {
+      display: none;
+      padding: 2rem 5rem;
+    }
+  
+    .mobile-header {
+      display: flex;
+    }
+}
+
+#menuToggle {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menuToggle input {
+    display: none;
+    -webkit-touch-callout: none;
+}
+
+#menu {
+    flex-direction: column;
+    justify-content: center;
+    -webkit-font-smoothing: antialiased;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    font-size: 1.2rem;
+}
+
+#menuToggle label {
+    cursor: pointer;
+}
+
+#menuToggle ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    position: absolute;
+    bottom: 5rem;
+    right: 0;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+
+#menuToggle:has(input:checked) ul, #menuToggle:focus-within ul {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    animation: fadeIn 0.4s ease;
+}
+
+#menuToggle span {
+    display: block;
+    width: 1.8rem;
+    height: 0.2rem;
+    margin-bottom: 0.3rem;
+    position: relative;
+    background: #111111;
+    border-radius: 10rem;
+    z-index: 2;
+    transform-origin: 0.25rem 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ label span {
+    opacity: 1;
+    transform: translate(0, -0.9rem) rotate(45deg);
+}
+
+#menuToggle input:checked ~ label span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ label span:nth-last-child(2) {
+    transform: translate(0, 0.6rem) rotate(-45deg);
+}
+
+.button{
+    background-color: #fd3887;
+    color: #f8f4f1;
+    padding: 0.5rem 1.5rem;
+    border: 0.1rem solid #fd3887;
+    text-decoration: none;
+    border-radius: 0.5rem;
+}
+
+.button:hover{
+    background-color: #f8f4f1;
+    color: #fd3887;
+    border: 0.1rem solid #fd3887;
+}
+
+
 /* FOOTER----------------------------------------------------- */
 
 footer{
@@ -136,19 +295,192 @@ footer{
     border-top: .3rem solid #fd3887;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer p{
+    text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+    footer {
+        padding: 1rem 2rem 8rem 2rem;
+        justify-content: left;
+    }
+}
+
+footer td{
+    padding-right: 1rem;
 }
 
 /* HOME ------------------------------------------------------ */
 
 #home1{
     background-color: #f1e1f4;
-    padding: 2rem 5rem;
+    padding: 2rem 5rem 6rem 5rem;
+    text-align: center;
+    position: relative;
+    border-radius: 1rem;
 }
 
 #home1 h1{
     line-height: 1;
+    font-size: 5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    #home1 {
+        padding: 1rem 1rem 3rem 1rem;
+    }
+
+    #home1 h1 {
+        font-size: 3rem;
+    }
+}
+
+#home1 div{
+    text-align: center;
+    position: relative;
+    display: block;
 }
 
 #home1 span{
     font-size: 2.5rem;
+}
+
+#home1 #home1-image1{
+    position: absolute;
+    width: 25%;
+    opacity: 0.2;
+    left: 0;
+    top: 0;
+}
+
+#home1 #home1-image2{
+    position: absolute;
+    height: 100%;
+    opacity: 0.2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-mask-image: linear-gradient(to right, transparent, black);
+    mask-image: linear-gradient(to right, transparent, black);
+    border-radius: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    #home1 #home1-image1{
+        width: 10rem;
+        opacity: 0.1;
+    }
+
+    #home1 #home1-image2{
+        display: none;
+    }
+}
+
+#home2 p{
+    max-width: 50rem;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 5rem auto;
+}
+
+#home2 span{
+    font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 768px) {
+    #home2 p{
+        font-size: 1rem;
+        margin: 2rem auto;
+    }
+
+    #home2 span{
+        font-size: 1.4rem;
+    }
+}
+
+/* OVER TAMARA ----------------------------------------------------- */
+
+#about1{
+    background-image: url(img/woman.jpg);
+    border-radius: 1rem;
+    background-size: cover;
+}
+
+#about1 div{
+    height: 100%;
+    padding: 4rem;
+    background-color: rgba(241, 225, 244, 0.8);
+    border-radius: 1rem;
+}
+
+#about2 p{
+    text-align: left;
+    margin: 2rem auto;
+}
+
+#about2{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem auto;
+}
+
+#about2 img{
+    width: 25rem;
+    border-radius: 1rem;
+}
+
+/* BEHANDELINGEN ----------------------------------------------------- */
+
+#behandelingen{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#behandelingen ul{
+    width: 90vw;
+    max-width: 50rem;
+}
+
+#behandelingen li{
+    background-color: #f1e1f4;
+    padding: .8rem 1rem;
+    border-radius: 1rem;
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+    margin-bottom: .3rem;
+}
+
+#behandelingen li:hover{
+    transform: scale(1.02);
+}
+
+#behandelingen li span{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    white-space: nowrap;
+    width: 7rem;
+}
+
+@media screen and (max-width: 768px) {
+    #behandelingen li span{
+        width: auto;
+    }
+}
+
+#behandelingen summary{
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
 }

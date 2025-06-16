@@ -21,8 +21,8 @@
     <meta property="og:locale" content="nl_NL">
     <meta property="og:url" content="https://kapsalon-tamara.nl/">
 </head>
-<body id="home">
-    <header>
+<body>
+    <header class="desktop-header" aria-hidden="true">
         <nav>
             <a href="index.html"><img src="img/logo-2.png" alt=""></a>
             <ul>
@@ -34,13 +34,41 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <header class="mobile-header" aria-hidden="true">
+        <nav>
+            <ul>
+            <li><a href="tel:0203459089"><img src="img/call.svg" alt=""></a></li>
+            <li><a href="mailto:info@kapsalon-tamara.nl"><img src="img/mail.svg" alt=""></a></li>
+            <li><a href="https://www.google.com/maps/dir/?api=1&destination=Prunuslaan%2023A,%201185%20KS%20Amstelveen,%20Nederland" target="_blank"><img src="img/map.svg" alt=""></a></li>
+            <li><div id="menuToggle">
+                <input type="checkbox" id="menuCheckbox">
+                <label for="menuCheckbox"><span></span><span></span><span></span></label>
+                <ul id="menu">
+                    <li><a href="index.html" class="currentPage">Home</a></li>
+                    <li><a href="about/index.html">Over Tamara</a></li>
+                    <li><a href="behandelingen/index.html">Behandelingen</a></li>
+                    <li><a href="producten/index.html">Producten</a></li>
+                    <li><a href="afspraak/index.html">Afspraak maken</a></li>
+                </ul>
+                </div>
+            </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="home">
         <section id="home1">
-            <h1><span>Welkom bij </span><br>KAPSALON <br>TAMARA</h1>
+            <img src="img/bloem gedeeltelijk.svg" alt="" id="home1-image1">
+            <img src="img/kapsalon-tamara-2-zw-transformed.jpeg" alt="" id="home1-image2">
+            <div>
+                <h1><span>Welkom bij </span><br>KAPSALON <br>TAMARA</h1>
+                <a href="afspraak/index.html" class="button">Maak nu jouw afspraak</a>
+            </div>
         </section>
-        <section>
-            <p>Welkom bij Kapsalon Tamara in Amstelveen, een rustige en sfeervolle salon in het Keizer Karelpark-West, nabij het Stadshart van Amstelveen. De ruimte is optimaal verlicht en straalt warmte en vriendelijkheid uit. Voor een nieuwe coupe, een mooie haarkleur en passend haaradvies ben je hier aan het juiste adres. Bel of kom langs om een afspraak te maken. Onder het genot van een kopje koffie of thee met wat lekkers erbij bespreken we de mogelijkheden. Zo verlaat je de salon tevreden en stralend met een glimlach op je gezicht.</p>
-            <p><span>Tot snel bij Kapsalon Tamara!</span></p>
+        <section id="home2">
+            <p>
+                Welkom bij Kapsalon Tamara in Amstelveen, een rustige en sfeervolle salon in het Keizer Karelpark-West, nabij het Stadshart van Amstelveen. De ruimte is optimaal verlicht en straalt warmte en vriendelijkheid uit. Voor een nieuwe coupe, een mooie haarkleur en passend haaradvies ben je hier aan het juiste adres. Bel of kom langs om een afspraak te maken. Onder het genot van een kopje koffie of thee met wat lekkers erbij bespreken we de mogelijkheden. Zo verlaat je de salon tevreden en stralend met een glimlach op je gezicht.
+                <br><br><span>Tot snel bij Kapsalon Tamara!</span>
+            </p>
         </section>
     </main>
     <footer>
