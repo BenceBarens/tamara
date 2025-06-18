@@ -37,6 +37,7 @@ body {
 P{
     text-align: center;
     margin: auto;
+    max-width: 35rem;
 }
 
 a{
@@ -86,10 +87,6 @@ ul{
     margin: 0;
 }
 
-p{
-    max-width: 40rem;
-}
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -129,6 +126,21 @@ background-color: #fd3887;
 
 *::-webkit-scrollbar-thumb:active {
 background-color: #fd3887;
+}
+
+.button{
+    background-color: #fd3887;
+    color: #f8f4f1;
+    padding: 0.5rem 1.5rem;
+    border: 0.1rem solid #fd3887;
+    text-decoration: none;
+    border-radius: 0.5rem;
+}
+
+.button:hover{
+    background-color: #f8f4f1;
+    color: #fd3887;
+    border: 0.1rem solid #fd3887;
 }
 
 /* HEADER----------------------------------------------------- */
@@ -176,6 +188,21 @@ header .currentPage{
 
 .mobile-header img{
     width: 2rem;
+}
+
+@media screen and (max-width: 1100px) {
+    .desktop-header nav img{
+        display: none;
+    }
+
+    .desktop-header{
+        display: flex;
+        justify-content: center;
+    }
+
+    .desktop-header nav{
+        margin: auto;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -259,7 +286,7 @@ header .currentPage{
 
 #menuToggle input:checked ~ label span {
     opacity: 1;
-    transform: translate(0, -0.9rem) rotate(45deg);
+    transform: translate(.2rem, -0.9rem) rotate(45deg);
 }
 
 #menuToggle input:checked ~ label span:nth-last-child(3) {
@@ -268,22 +295,7 @@ header .currentPage{
 }
 
 #menuToggle input:checked ~ label span:nth-last-child(2) {
-    transform: translate(0, 0.6rem) rotate(-45deg);
-}
-
-.button{
-    background-color: #fd3887;
-    color: #f8f4f1;
-    padding: 0.5rem 1.5rem;
-    border: 0.1rem solid #fd3887;
-    text-decoration: none;
-    border-radius: 0.5rem;
-}
-
-.button:hover{
-    background-color: #f8f4f1;
-    color: #fd3887;
-    border: 0.1rem solid #fd3887;
+    transform: translate(.2rem, 0.6rem) rotate(-45deg);
 }
 
 
@@ -306,6 +318,7 @@ footer p{
     footer {
         padding: 1rem 2rem 8rem 2rem;
         justify-content: left;
+        gap: 1rem;
     }
 }
 
@@ -321,6 +334,7 @@ footer td{
     text-align: center;
     position: relative;
     border-radius: 1rem;
+    overflow: hidden;
 }
 
 #home1 h1{
@@ -407,13 +421,14 @@ footer td{
     background-image: url(img/woman.jpg);
     border-radius: 1rem;
     background-size: cover;
+    overflow: hidden;
 }
 
 #about1 div{
     height: 100%;
     padding: 4rem;
+    padding-top: 2rem;
     background-color: rgba(241, 225, 244, 0.8);
-    border-radius: 1rem;
 }
 
 #about2 p{
@@ -426,11 +441,39 @@ footer td{
     align-items: center;
     gap: 2rem;
     margin: 2rem auto;
+    max-width: 70rem;
 }
 
 #about2 img{
     width: 25rem;
     border-radius: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    #about1{
+        background-image: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        width: 100%;
+        margin: 0;
+    }
+
+    #about1 div{
+        padding: 2rem;
+    }
+
+    #about2{
+        align-items: center;
+        flex-direction: column-reverse;
+        gap: 0rem;
+        margin-top: 0;
+    }
+
+    #about2 img{
+        width: 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
 }
 
 /* BEHANDELINGEN ----------------------------------------------------- */
@@ -483,4 +526,74 @@ footer td{
     font-weight: 400;
     font-style: normal;
     cursor: pointer;
+}
+
+/* PRODUCTEN -------------------------------------- */
+
+#producten2{
+    display: flex;
+    gap: 1rem;
+    margin: 4rem auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#producten2 img{
+    max-width: 30rem;
+    max-height: 20rem;
+    border-radius: 2rem;
+    box-shadow: rgba(0,0,0,0.1) .5rem .5rem 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    #producten2 img{
+        max-width: 100%;
+        height: auto;
+    }
+    
+}
+
+/* AFSPRAAK MAKEN ------------------------------------- */
+
+#afspraak1{
+    background-image: url(img/stoelen.jpg);
+    background-position: center;
+    border-radius: 1rem;
+    background-size: cover;
+    overflow: hidden;
+}
+
+#afspraak1 div{
+    height: 100%;
+    padding: 4rem;
+    padding-top: 2rem;
+    background-color: rgba(241, 225, 244, 0.8);
+}
+
+#afspraak2{
+    margin: 3rem auto;
+}
+
+#afspraak2 li{
+    background-color: #f1e1f4;
+    max-width: 30rem;
+    margin: auto;
+    font-size: large;
+    padding: 0;
+    border-radius: 10rem;
+    margin-bottom: .5rem;
+}
+
+#afspraak2 a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#afspraak2 img{
+    background-color: #f1e1f4;
+    border: .2rem solid #fd3887;
+    padding: 1rem;
+    border-radius: 10rem;
 }
