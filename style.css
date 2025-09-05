@@ -1,4 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Serif:ital@0;1&family=Poppins&display=swap');
+/* Website Made by Bence (All rights reserved © 2025 Bence Barens) */
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(fonts/Poppins.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Indie Flower';
+    src: url(fonts/IndieFlower.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Serif';
+    src: url(fonts/NotoSerif.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
 span{
   font-family: "Indie Flower", cursive;
@@ -27,7 +51,7 @@ h1{
 body {
     background-color: #f8f4f1;
     width: 100%;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", Arial, sans-serif;
     font-weight: 400;
     font-style: normal;
     color:#111111 ;
@@ -356,6 +380,20 @@ footer td{
     text-align: center;
     position: relative;
     display: block;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeInFromTopLeft {
+    from {
+        transform: scale(0.9) translate(-1rem, -1rem);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translate(0, 0);
+        opacity: 0.2;
+    }
+
 }
 
 #home1 span{
@@ -368,6 +406,7 @@ footer td{
     opacity: 0.2;
     left: 0;
     top: 0;
+    animation: fadeInFromTopLeft 1s ease;
 }
 
 #home1 #home1-image2{
@@ -429,6 +468,10 @@ footer td{
     padding: 4rem;
     padding-top: 2rem;
     background-color: rgba(241, 225, 244, 0.8);
+}
+
+#about1 div h1, #about1 div p{
+    animation: fadeIn 1s ease;
 }
 
 #about2 p{
@@ -567,7 +610,11 @@ footer td{
     height: 100%;
     padding: 4rem;
     padding-top: 2rem;
-    background-color: rgba(241, 225, 244, 0.8);
+    background-color: rgba(241, 225, 244, 0.9);
+}
+
+#afspraak1 div h1, #afspraak1 div p{
+    animation: fadeIn 1s ease;
 }
 
 #afspraak2{
